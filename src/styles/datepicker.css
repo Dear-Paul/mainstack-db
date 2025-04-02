@@ -1,0 +1,92 @@
+/* Container for the date picker */
+.react-datepicker {
+    border: 1px solid #e5e7eb !important; /* Tailwind gray-200 */
+    border-radius: 0.5rem !important; /* Tailwind rounded-lg */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important; /* Tailwind shadow-lg */
+    padding: 1rem !important; /* Tailwind p-4 */
+    font-family: sans-serif !important;
+  }
+  
+  /* Header (month and year) */
+  .react-datepicker__header {
+    background-color: white !important;
+    border-bottom: none !important;
+    padding: 0.5rem 0 !important; /* Tailwind p-2 */
+  }
+  
+  /* Month and year text */
+  .react-datepicker__current-month {
+    font-size: 1rem !important; /* Tailwind text-base */
+    font-weight: 600 !important; /* Tailwind font-semibold */
+    color: #1f2937 !important; /* Tailwind gray-800 */
+  }
+  
+  /* Navigation arrows */
+  .react-datepicker__navigation {
+    top: 0.75rem !important; /* Adjust position */
+  }
+  
+  .react-datepicker__navigation--previous {
+    left: 0.5rem !important; /* Tailwind left-2 */
+  }
+  
+  .react-datepicker__navigation--next {
+    right: 0.5rem !important; /* Tailwind right-2 */
+  }
+  
+  /* Days of the week */
+  .react-datepicker__day-name {
+    color: #6b7280 !important; /* Tailwind gray-500 */
+    font-size: 0.875rem !important; /* Tailwind text-sm */
+    font-weight: 600 !important; /* Tailwind font-semibold */
+    width: 2rem !important; /* Tailwind w-8 */
+    line-height: 2rem !important; /* Tailwind leading-8 */
+    margin: 0.125rem !important; /* Tailwind m-0.5 */
+  }
+  
+  /* Days */
+  .react-datepicker__day {
+    color: #1f2937 !important; /* Tailwind gray-800 */
+    font-size: 0.875rem !important; /* Tailwind text-sm */
+    width: 2rem !important; /* Tailwind w-8 */
+    line-height: 2rem !important; /* Tailwind leading-8 */
+    margin: 0.125rem !important; /* Tailwind m-0.5 */
+    border-radius: 9999px !important; /* Tailwind rounded-full */
+  }
+  
+  /* Selected day */
+  .react-datepicker__day--selected,
+  .react-datepicker__day--keyboard-selected {
+    background-color: #000000 !important; /* Tailwind black */
+    color: #ffffff !important; /* Tailwind white */
+    border-radius: 9999px !important; /* Tailwind rounded-full */
+  }
+  
+  /* Hover effect on days */
+  .react-datepicker__day:hover {
+    background-color: #e5e7eb !important; /* Tailwind gray-200 */
+    border-radius: 9999px !important; /* Tailwind rounded-full */
+  }
+  
+  /* Disabled days */
+  .react-datepicker__day--disabled {
+    color: #d1d5db !important; /* Tailwind gray-300 */
+  }
+  
+  /* Year dropdown */
+  .react-datepicker__year-dropdown {
+    background-color: white !important;
+    border: 1px solid #e5e7eb !important; /* Tailwind gray-200 */
+    border-radius: 0.5rem !important; /* Tailwind rounded-lg */
+    max-height: 200px !important;
+    overflow-y: auto !important;
+  }
+  
+  .react-datepicker__year-option {
+    padding: 0.5rem !important; /* Tailwind p-2 */
+    color: #1f2937 !important; /* Tailwind gray-800 */
+  }
+  
+  .react-datepicker__year-option:hover {
+    background-color: #e5e7eb !important; /* Tailwind gray-200 */
+  }
