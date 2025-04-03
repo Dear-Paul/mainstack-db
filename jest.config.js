@@ -1,4 +1,3 @@
- 
 export default {
   testEnvironment: 'jsdom', // Use JSDOM for DOM testing
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'], // Setup file for Testing Library matchers
