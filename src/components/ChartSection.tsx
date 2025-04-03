@@ -11,6 +11,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Transaction } from '../types';
+import { formatDate } from '../utils';
 
 // Register Chart.js components
 ChartJS.register(
@@ -47,7 +48,7 @@ export default function ChartSection({ transactions }: RevenueChartProps) {
     // Extract dates and amounts
     const labels = sortedTransactions.map(transaction => transaction.date);
     const amounts = sortedTransactions.map(transaction =>
-      parseFloat(transaction?.amount)
+      parseFloat(String(transaction?.amount))
     );
 
     // Get first and last dates
@@ -60,10 +61,10 @@ export default function ChartSection({ transactions }: RevenueChartProps) {
         {
           label: 'Transaction Amount',
           data: amounts,
-          borderColor: '#FF5403', // Orange color to match the screenshot
+          borderColor: '#FF5403',
           backgroundColor: 'rgba(255, 84, 3, 0.1)',
           fill: false,
-          tension: 0.4, // Smooth curve
+          tension: 0.4,
         },
       ],
       firstDate,
@@ -74,7 +75,7 @@ export default function ChartSection({ transactions }: RevenueChartProps) {
   return (
     <div className="flex-1">
       <>
-        <div className="h-64  w-[700px] border-red-400">
+        <div className="h-64  w-[690px] border-b border-[#EFF1F6]">
           <Line
             data={chartData}
             options={{
@@ -99,9 +100,13 @@ export default function ChartSection({ transactions }: RevenueChartProps) {
             }}
           />
         </div>
-        <div className="flex justify-between  w-[700px] mt-2">
-          <p className="text-sm text-gray-500">{chartData.firstDate}</p>
-          <p className="text-sm text-gray-500">{chartData.lastDate}</p>
+        <div className="flex justify-between  w-[690px] mt-2">
+          <p className="text-sm text-gray-500">
+            {formatDate(chartData.firstDate)}
+          </p>
+          <p className="text-sm text-gray-500">
+            {formatDate(chartData.lastDate)}
+          </p>
         </div>
       </>
     </div>

@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import TransactionsHistory from '../components/TransactionsHistory';
 import { Transaction } from '../types';
 import '@testing-library/jest-dom';
+import { formatDate } from '../utils';
 
 // Mock the icons
 jest.mock('../icons/DepositIcon', () => () => (
@@ -62,14 +63,14 @@ describe('TransactionsHistory Component', () => {
     expect(screen.getByText('Product A')).toBeInTheDocument();
     expect(screen.getByText('John Doe')).toBeInTheDocument();
     expect(screen.getByText('USD 100')).toBeInTheDocument();
-    expect(screen.getByText('2023-10-01')).toBeInTheDocument();
+    expect(screen.getByText(formatDate('2023-10-01'))).toBeInTheDocument();
     expect(screen.getByTestId('deposit-icon')).toBeInTheDocument();
 
     // Second transaction (withdrawal)
     expect(screen.getByText('Product B')).toBeInTheDocument();
     expect(screen.getByText('--')).toBeInTheDocument(); // Fallback for missing name
     expect(screen.getByText('USD 50')).toBeInTheDocument();
-    expect(screen.getByText('2023-10-02')).toBeInTheDocument();
+    expect(screen.getByText(formatDate('2023-10-02'))).toBeInTheDocument();
     expect(screen.getByTestId('withdrawal-icon')).toBeInTheDocument();
   });
 

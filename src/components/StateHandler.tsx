@@ -6,6 +6,7 @@ interface StateHandlerProps {
   loadingMessage?: string;
   emptyMessage?: string;
   children: React.ReactNode;
+  width?: string;
 }
 
 export default function StateHandler({
@@ -14,10 +15,13 @@ export default function StateHandler({
   loadingMessage = 'Loading...',
   emptyMessage = 'No data available.',
   children,
+  width,
 }: StateHandlerProps) {
   if (isLoading) {
     return (
-      <div className="min-h-[200px] flex items-center justify-center bg-gray-100">
+      <div
+        className={`min-h-[200px] flex items-center justify-center bg-gray-100 rounded-2xl ${width}`}
+      >
         <div className="text-gray-600">{loadingMessage}</div>
       </div>
     );

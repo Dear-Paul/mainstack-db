@@ -21,7 +21,6 @@ export default function CustomDatePicker({
     null as unknown as HTMLDivElement
   );
 
-  // Handle react-datepicker's onChange, which can pass Date | null
   const handleDateChange = (date: Date | null) => {
     if (date) {
       onChange(date);
@@ -70,9 +69,6 @@ export default function CustomDatePicker({
             showYearDropdown
             scrollableYearDropdown
             yearDropdownItemNumber={100}
-            minDate={new Date('1900-01-01')}
-            maxDate={new Date('2100-12-31')}
-            className="border rounded-lg"
           />
         </div>
       )}

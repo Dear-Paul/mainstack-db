@@ -25,12 +25,17 @@ export default function Revenue() {
         <StateHandler
           isEmpty={!transactions || transactions.length === 0}
           isLoading={isLoading}
+          width="w-[690px]"
         >
           <ChartSection transactions={transactions} />
         </StateHandler>
         {/* Wallet Section */}
         <div className="w-64">
-          <StateHandler isEmpty={!wallet} isLoading={loadingWallet}>
+          <StateHandler
+            isEmpty={!wallet}
+            isLoading={loadingWallet}
+            width="w-[290px]"
+          >
             <Wallet wallet={wallet} />
           </StateHandler>
         </div>

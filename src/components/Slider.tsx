@@ -13,7 +13,7 @@ export default function Slider({ isOpen, onClose, children }: SliderProps) {
         isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
     >
-      {/* Overlay (Covers the Entire Page) */}
+      {/* Overlay */}
       <div
         className="absolute inset-0 bg-[#8d8f93] opacity-50"
         onClick={onClose}

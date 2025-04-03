@@ -3,6 +3,7 @@ import WithdrawalIcon from '../icons/WithdrawaIcon';
 import FilterIcon from '../icons/FilterIcon';
 import ExportListIcon from '../icons/ExportListIcon';
 import { Transaction } from '../types';
+import { formatDate } from '../utils';
 
 interface TransactionsProps {
   onFilterClick: () => void;
@@ -70,7 +71,9 @@ export default function TransactionsHistory({
             </div>
             <div className="text-right">
               <p className="text-gray-900 font-medium">{`USD ${transaction.amount}`}</p>
-              <p className="text-sm text-gray-500">{transaction.date}</p>
+              <p className="text-sm text-gray-500">
+                {formatDate(transaction.date)}
+              </p>
             </div>
           </div>
         ))}
