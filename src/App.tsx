@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import Revenue from './components/Revenue';
+import NoContentPlaceholder from './components/NoContentPlaceholder';
 
 export default function App() {
   return (
@@ -25,7 +26,7 @@ export default function App() {
         path="/home"
         element={
           <Dashboard>
-            <div>Home Page</div>
+            <NoContentPlaceholder title="Home" content="No Data available" />
           </Dashboard>
         }
       />
@@ -33,7 +34,10 @@ export default function App() {
         path="/analytics"
         element={
           <Dashboard>
-            <div>Analytics Page</div>
+            <NoContentPlaceholder
+              title="Analytics"
+              content="No Data available"
+            />
           </Dashboard>
         }
       />
@@ -41,15 +45,7 @@ export default function App() {
         path="/crm"
         element={
           <Dashboard>
-            <div>CRM Page</div>
-          </Dashboard>
-        }
-      />
-      <Route
-        path="/apps"
-        element={
-          <Dashboard>
-            <div>Apps Page</div>
+            <NoContentPlaceholder title="CRM" content="No Data available" />
           </Dashboard>
         }
       />
